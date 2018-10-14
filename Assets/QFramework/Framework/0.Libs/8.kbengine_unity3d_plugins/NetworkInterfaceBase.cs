@@ -18,7 +18,7 @@
         /// 网络模块
         /// 处理连接、收发数据
         /// </summary>
-        public abstract class NetworkInterfaceBase
+        public abstract class NetworkInterfaceBase1
         {
                 public const int TCP_PACKET_MAX = 1460;
                 public const int UDP_PACKET_MAX = 1472;
@@ -43,16 +43,16 @@
                         public ConnectCallback connectCB = null;
                         public object userData = null;
                         public Socket socket = null;
-                        public NetworkInterfaceBase networkInterface = null;
+                        public NetworkInterfaceBase1 networkInterface = null;
                         public string error = "";
                 }
 
-                public NetworkInterfaceBase()
+                public NetworkInterfaceBase1()
                 {
                         reset();
                 }
 
-                ~NetworkInterfaceBase()
+                ~NetworkInterfaceBase1()
                 {
                         Dbg.DEBUG_MSG("NetworkInterfaceBase::~NetworkInterfaceBase(), destructed!!!");
                         reset();

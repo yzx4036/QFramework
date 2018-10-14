@@ -22,7 +22,7 @@
 	{
 		public override bool valid()
 		{
-			return ((_socket != null) && (_socket.Connected == true));
+			return ((_clientSocket != null) && (_clientSocket.Connected == true));
 		}
 
 		protected override Socket createSocket()
@@ -48,15 +48,22 @@
 
 		protected override void onAsyncConnect(ConnectState state)
 		{
-			try
-			{
-				state.socket.Connect(state.connectIP, state.connectPort);
-			}
-			catch (Exception e)
-			{
-				Dbg.ERROR_MSG(string.Format("NetworkInterfaceTCP::_asyncConnect(), connect to '{0}:{1}' fault! error = '{2}'", state.connectIP, state.connectPort, e));
-				state.error = e.ToString();
-			}
-		}
+                        try
+                        {
+                                this._state = SocketState.Connecting;
+                                var asyncFlag = state.socket.ConnectAsync(state.socketAEA);
+                                Dbg.ERROR_MSG("connect asyncFlag..:" + asyncFlag);
+                                this._timeStamp = Time.realtimeSinceStartup;
+
+                                //Timers.inst.Add(Time.fixedDeltaTime, 0, this.process);
+                        }
+                        catch (Exception e)
+                        {
+                                Dbg.ERROR_MSG(string.Format(">>>NetWorkInterface::_asyncConnect(), connect to '{0}:{1}' fault! error = '{2}'", state.connectIP, state.connectPort, e));
+                                state.error = e.ToString();
+                                this.Dispose(e.Message);
+
+                        }
+                }
 	}
 }
