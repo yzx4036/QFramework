@@ -303,9 +303,6 @@
  <Reference Include="QFramework.Log">
  <HintPath>E:/UnityProj/QFramework/Assets/QFramework/Framework/0.Libs/Plugins/QFramework.Log.dll</HintPath>
  </Reference>
- <Reference Include="UniRx.Examples">
- <HintPath>E:/UnityProj/QFramework/Assets/QFramework/Framework/0.Libs/Plugins/UniRx.Examples.dll</HintPath>
- </Reference>
  <Reference Include="DOTween">
  <HintPath>E:/UnityProj/QFramework/Assets/QFramework/Framework/0.Libs/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
@@ -344,6 +341,12 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/yzx/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="FairyGUI.Editor">
+ <HintPath>E:/UnityProj/QFramework/Assets/QFramework/Framework/0.Libs/Plugins/fairygui/Editor/FairyGUI.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="FairyGUI">
+ <HintPath>E:/UnityProj/QFramework/Assets/QFramework/Framework/0.Libs/Plugins/fairygui/FairyGUI.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/Program Files/Unity2018_2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
