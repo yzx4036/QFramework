@@ -137,19 +137,21 @@
                                 _packetReceiver.process();
                 }
 
-                protected override void onAsyncConnectCB(ConnectState state)
-                {
-                        if (state.error.Length > 0 || !initKCP())
-                                return;
-
-                        connected = true;
-                        remoteEndPint = new IPEndPoint(IPAddress.Parse(state.connectIP), state.connectPort);
-                }
 
                 protected override void onAsyncConnect(ConnectState state)
                 {
                         try
                         {
+                                this._state = SocketState.Connecting;
+                                if (state.error.Length > 0 || !initKCP())
+                                {
+                                        this._state = SocketState.Disconnect;
+                                        return;
+                                }      
+
+                                this._state = SocketState.Connected;
+                                remoteEndPint = new IPEndPoint(IPAddress.Parse(state.connectIP), state.connectPort);
+
                                 //state.socket.Connect(state.connectIP, state.connectPort);
 
                                 byte[] helloPacket = System.Text.Encoding.ASCII.GetBytes(UDP_HELLO);

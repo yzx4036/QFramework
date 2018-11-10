@@ -59,13 +59,13 @@ namespace KBEngine
             //UnityEngine.Debug.Log(">>>>>wpos:"+_wpos+" >t_wpos:" +t_wpos +" >_rpos:"+_rpos +" >result=" + (UInt32)(t_wpos - _rpos));
             if (_rpos < t_wpos)
             {
-                LuaManager.Instance.CallFunction("KBEngineLua.MessageReader", "process", new object[] { _buffer, (UInt32)_rpos, (UInt32)(Math.Abs(t_wpos - _rpos)) });
+                //LuaManager.Instance.CallFunction("KBEngineLua.MessageReader", "process", new object[] { _buffer, (UInt32)_rpos, (UInt32)(Math.Abs(t_wpos - _rpos)) });
                 Interlocked.Exchange(ref _rpos, t_wpos);
             }
             else if (t_wpos < _rpos)
             {
-                LuaManager.Instance.CallFunction("KBEngineLua.MessageReader", "process", new object[] { _buffer, (UInt32)_rpos, (UInt32)(Math.Abs(_buffer.Length - _rpos)) });
-                LuaManager.Instance.CallFunction("KBEngineLua.MessageReader", "process", new object[] { _buffer, (UInt32)0, (UInt32)t_wpos });
+                //LuaManager.Instance.CallFunction("KBEngineLua.MessageReader", "process", new object[] { _buffer, (UInt32)_rpos, (UInt32)(Math.Abs(_buffer.Length - _rpos)) });
+                //LuaManager.Instance.CallFunction("KBEngineLua.MessageReader", "process", new object[] { _buffer, (UInt32)0, (UInt32)t_wpos });
                 Interlocked.Exchange(ref _rpos, t_wpos);
             }
             else
