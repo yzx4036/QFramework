@@ -12,7 +12,7 @@ namespace FairyGame
 
 		protected override void LoadExternal()
 		{
-			IconManager.inst.GetIcon(url, OnLoadCompleted);
+			//IconManager.inst.GetIcon(url, OnLoadCompleted);"
 		}
 
 		protected override void FreeExternal(NTexture texture)
