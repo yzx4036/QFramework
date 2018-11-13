@@ -7,8 +7,8 @@ namespace QFramework
 	using UnityEngine;
 	using UnityEngine.EventSystems;
 	#if SLUA_SUPPORT
-	using SLua;
-	[CustomLuaClass]
+	    using SLua;
+	    [CustomLuaClass]
 	#endif
 	public class UIEventListener : EventTrigger
 	{

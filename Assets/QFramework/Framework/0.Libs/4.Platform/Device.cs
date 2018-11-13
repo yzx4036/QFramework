@@ -29,7 +29,7 @@ namespace QFramework
 	using UnityEngine;
 	
 #if SLUA_SUPPORT
-	using SLua;
+    using SLua;
 
 	[CustomLuaClassAttribute]
 #endif

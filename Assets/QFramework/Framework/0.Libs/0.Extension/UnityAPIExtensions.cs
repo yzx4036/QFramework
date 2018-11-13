@@ -514,10 +514,8 @@ namespace QFramework
     }
 
 #if SLUA_SUPPORT
-    using SLua;
     [CustomLuaClass]
 #endif
-
     /// <summary>
     /// Transform's Extension
     /// </summary>
