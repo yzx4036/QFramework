@@ -28,7 +28,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Lui
+namespace QFramework
 {
 	#if SLUA_SUPPORT 
     [SLua.CustomLuaClass]
@@ -47,15 +47,18 @@ namespace Lui
 			_p1 = bar.transform.localPosition;
 			_p2 = new Vector2 (-_p1.x, _p1.y);
 		}
-
+#if SLUA_SUPPORT
 		[SLua.DoNotToLua]
+#endif
 		public void OnPointerDown(PointerEventData eventData)
 		{
 			_lastPoint = eventData.position;
 		}
 
+#if SLUA_SUPPORT
 		[SLua.DoNotToLua]
-		public void OnPointerUp(PointerEventData eventData)
+#endif
+        public void OnPointerUp(PointerEventData eventData)
 		{
 			LeanTween.cancel (bar);
 			if (bar.transform.localPosition.x <= 0) {
@@ -70,8 +73,9 @@ namespace Lui
 				});
 			}
 		}
-
-		[SLua.DoNotToLua]
+#if SLUA_SUPPORT
+        [SLua.DoNotToLua]
+#endif
 		public void OnDrag(PointerEventData eventData)
 		{
 			Vector2 offset = (eventData.position - _lastPoint);

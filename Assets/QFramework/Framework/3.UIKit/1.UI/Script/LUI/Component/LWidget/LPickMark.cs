@@ -31,14 +31,14 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace Lui
+namespace QFramework
 {
 	#if SLUA_SUPPORT 
     [SLua.CustomLuaClass] 
     #endif
 	public class LPickMark : MonoBehaviour,IPointerDownHandler {
 
-	    public Lui.LTableView tableView;
+	    public LTableView tableView;
 	    public string param;
 
 	    public void OnPointerDown(PointerEventData eventData)

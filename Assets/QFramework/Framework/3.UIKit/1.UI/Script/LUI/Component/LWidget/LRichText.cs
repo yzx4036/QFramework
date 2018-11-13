@@ -29,7 +29,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace Lui
+namespace QFramework
 {
 
     public enum RichType
@@ -335,7 +335,7 @@ namespace Lui
 					string atlas = System.IO.Path.GetDirectoryName(rendElem.path);
 					string spname = System.IO.Path.GetFileName(rendElem.path);
 
-                    Sprite sp = LLoadBundle.GetInstance().GetSpriteByName(atlas, spname);
+                    Sprite sp = null;// LLoadBundle.GetInstance().GetSpriteByName(atlas, spname);
                     rendElem.width = (int)sp.rect.size.x;
                     rendElem.height = (int)sp.rect.size.y;
                     _elemRenderArr.Add(rendElem);
@@ -352,7 +352,7 @@ namespace Lui
                     string atlas = System.IO.Path.GetDirectoryName(rendElem.path);
                     string spname = System.IO.Path.GetFileName(rendElem.path);
 
-                    Sprite sp = LLoadBundle.GetInstance().GetSpriteByName(atlas, spname);
+                    Sprite sp = null; //LLoadBundle.GetInstance().GetSpriteByName(atlas, spname);
                     rendElem.width = (int)sp.rect.size.x;
                     rendElem.height = (int)sp.rect.size.y;
                     _elemRenderArr.Add(rendElem);
@@ -689,7 +689,7 @@ namespace Lui
             {
 				string atlas = System.IO.Path.GetDirectoryName(elem.path);
 				string spname = System.IO.Path.GetFileName(elem.path);
-                Sprite sp = LLoadBundle.GetInstance().GetSpriteByName(atlas, spname);
+                Sprite sp = null;//LLoadBundle.GetInstance().GetSpriteByName(atlas, spname);
                 comImage.sprite = sp;
                 comImage.raycastTarget = this.raycastTarget;
             }
@@ -950,17 +950,20 @@ namespace Lui
         {
             parseRichElemString(content, (flag, param) =>
             {
+                //todo 111
                 if (flag == "lab")
                 {
-                    this.insertElement(
-                        param.ContainsKey("txt") ? param["txt"] : "",
-                        LUtil.StringToColor(param.ContainsKey("color") ? param["color"] : defaultLabColor),
-                        param.ContainsKey("size") ? System.Convert.ToInt32(param["size"]) : defaultLabSize,
-                        param.ContainsKey("isUnderLine") ? System.Convert.ToBoolean(param["isUnderLine"]) : false,
-                        param.ContainsKey("isOutLine") ? System.Convert.ToBoolean(param["isOutLine"]) : false,
-                        LUtil.StringToColor(param.ContainsKey("outLineColor") ? param["outLineColor"] : "#000000"),
-                        param.ContainsKey("data") ? param["data"] : ""
-                        );
+                    
+                    
+                    //this.insertElement(
+                    //    param.ContainsKey("txt") ? param["txt"] : "",
+                    //    //LUtil.StringToColor(param.ContainsKey("color") ? param["color"] : defaultLabColor),
+                    //    param.ContainsKey("size") ? System.Convert.ToInt32(param["size"]) : defaultLabSize,
+                    //    param.ContainsKey("isUnderLine") ? System.Convert.ToBoolean(param["isUnderLine"]) : false,
+                    //    param.ContainsKey("isOutLine") ? System.Convert.ToBoolean(param["isOutLine"]) : false,
+                    //    //LUtil.StringToColor(param.ContainsKey("outLineColor") ? param["outLineColor"] : "#000000"),
+                    //    param.ContainsKey("data") ? param["data"] : ""
+                    //    );
                 }else if(flag == "img")
                 {
                     this.insertElement(

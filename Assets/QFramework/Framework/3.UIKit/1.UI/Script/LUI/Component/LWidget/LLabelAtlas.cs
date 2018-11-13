@@ -28,7 +28,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-namespace Lui
+namespace QFramework
 {
     /// <summary>
     /// 缓存结构
@@ -77,7 +77,7 @@ namespace Lui
         {
             if (text != "")
             {
-				sprites = LLoadBundle.GetInstance().GetSpritesByName(atlas,prefix);
+                sprites = null;// LLoadBundle.GetInstance().GetSpritesByName(atlas,prefix);
                 loadTexture();
                 render();
             }

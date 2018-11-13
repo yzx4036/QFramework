@@ -32,7 +32,7 @@ using UnityEngine.EventSystems;
 using System;
 using System.Collections;
 
-namespace Lui
+namespace QFramework
 {
     public class LGridViewCell : LTableViewCell
     {

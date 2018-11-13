@@ -27,7 +27,7 @@ THE SOFTWARE.
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace Lui
+namespace QFramework
 {
     #if SLUA_SUPPORT 
         [SLua.CustomLuaClass] 

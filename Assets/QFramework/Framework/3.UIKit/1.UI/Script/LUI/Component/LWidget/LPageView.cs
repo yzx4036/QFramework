@@ -30,7 +30,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace Lui
+namespace QFramework
 {
     /// <summary>
     /// 翻页

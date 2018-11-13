@@ -29,7 +29,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Lui
+namespace QFramework
 {
     #if SLUA_SUPPORT 
     [SLua.CustomLuaClass] 

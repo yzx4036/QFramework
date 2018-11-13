@@ -29,7 +29,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using System.Collections;
 
-namespace Lui
+namespace QFramework
 {
     /// <summary>
     /// 按钮

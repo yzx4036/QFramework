@@ -31,7 +31,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace Lui
+namespace QFramework
 {
     public class LTableViewCell
     {

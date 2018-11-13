@@ -28,7 +28,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace Lui
+namespace QFramework
 {
     /// <summary>
     /// 摇杆
@@ -97,6 +97,7 @@ namespace Lui
         {
             if (joyStick)
             {
+                Debug.Log(eventData);
                 Vector2 point = transform.InverseTransformPoint(eventData.position);
                 float dis = Vector3.Distance(centerPoint, point);
                 joyStick.transform.localPosition = dis < radius ? point : new Vector2(
