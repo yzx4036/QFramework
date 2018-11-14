@@ -40,6 +40,7 @@ namespace QFramework
         public static void Init()
         {
             Instance.InitResMgr();
+            Debug.Log(">>>>>Instance.InitResMgr success !!!"); 
         }
 
         #endregion
@@ -62,7 +63,14 @@ namespace QFramework
 
         #endregion
 
-		public void InitResMgr()
+        public override void OnSingletonInit()
+        {
+            base.OnSingletonInit();
+            Init(); //初始化resmgr
+        }
+
+
+        public void InitResMgr()
         {   
 #if UNITY_EDITOR
             if (AbstractRes.SimulateAssetBundleInEditor)
@@ -239,6 +247,20 @@ namespace QFramework
 
             ++mCurrentCoroutineCount;
             StartCoroutine(task.DoLoadAsync(OnIEnumeratorTaskFinish));
+        }
+
+        #endregion
+
+
+        #region 
+
+        /// <summary>
+        /// 从loder池中获取一个eResLoader
+        /// </summary>
+        /// <returns></returns>
+        public ResLoader GetOneResLoader()
+        {
+            return ResLoader.Allocate();
         }
 
         #endregion

@@ -334,11 +334,13 @@ namespace QFramework
 
 					string atlas = System.IO.Path.GetDirectoryName(rendElem.path);
 					string spname = System.IO.Path.GetFileName(rendElem.path);
-
-                    Sprite sp = null;// LLoadBundle.GetInstance().GetSpriteByName(atlas, spname);
+                    ResLoader _loader = ResMgr.Instance.GetOneResLoader();
+                    Sprite sp = _loader.LoadSprite(atlas, spname); // LLoadBundle.GetInstance().GetSpriteByName(atlas, spname);
                     rendElem.width = (int)sp.rect.size.x;
                     rendElem.height = (int)sp.rect.size.y;
                     _elemRenderArr.Add(rendElem);
+                    _loader.Recycle2Cache();
+                    _loader = null;
                 }
                 else if (elem.type == RichType.ANIM)
                 {
@@ -689,6 +691,8 @@ namespace QFramework
             {
 				string atlas = System.IO.Path.GetDirectoryName(elem.path);
 				string spname = System.IO.Path.GetFileName(elem.path);
+                
+                
                 Sprite sp = null;//LLoadBundle.GetInstance().GetSpriteByName(atlas, spname);
                 comImage.sprite = sp;
                 comImage.raycastTarget = this.raycastTarget;

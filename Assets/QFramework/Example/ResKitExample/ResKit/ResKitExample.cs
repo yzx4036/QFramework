@@ -30,12 +30,14 @@ namespace QFramework.Example
 {
 	public class ResKitExample : MonoBehaviour
 	{
-		private ResLoader mResLoader = ResLoader.Allocate();
+        private ResLoader mResLoader = null;
+        private void Awake() 
+        {
+            mResLoader = ResMgr.Instance.GetOneResLoader();
+        }
 
-		private void Start()
+        private void Start()
 		{
-			ResMgr.Init();
-
 			mResLoader.LoadSync<GameObject>("resources://GameObject")
 				.Instantiate()
 				.Name("这是使用ResKit加载的对象");

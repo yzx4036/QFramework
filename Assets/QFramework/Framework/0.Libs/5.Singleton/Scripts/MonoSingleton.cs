@@ -46,7 +46,6 @@ namespace QFramework
 
 		public virtual void OnSingletonInit()
 		{
-
 		}
 
 		public virtual void Dispose()

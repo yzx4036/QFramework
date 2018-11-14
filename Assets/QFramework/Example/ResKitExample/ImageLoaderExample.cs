@@ -38,9 +38,9 @@ namespace QFramework.Example
 		private IEnumerator Start()
 		{
 			ResMgr.Init();
-
-			// net image
-			mResLoader.Add2Load(
+            
+            // net image
+            mResLoader.Add2Load(
 				"http://qframework.io/content/images/2017/07/-----2017-07-01-12-14-56.png".ToNetImageResName(),
 				delegate(bool b, IRes res)
 				{
@@ -52,8 +52,6 @@ namespace QFramework.Example
 							new Rect(0, 0, texture2D.width, texture2D.height), Vector2.one * 0.5f);
 					}
 				});
-
-			mResLoader.LoadAsync();
 
 			yield return new WaitForSeconds(5.0f);
 
