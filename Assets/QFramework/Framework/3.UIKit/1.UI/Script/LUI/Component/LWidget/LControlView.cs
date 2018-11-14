@@ -60,7 +60,7 @@ namespace QFramework
         {
             this.radius = 150;
             this.radiusBg = 140;
-			this.flowDis = 65;
+            this.flowDis = 65;
             this.centerPoint = Vector2.zero;
             this._lastPoint = Vector2.zero;
             this.relocateWithAnimation = true;
@@ -97,7 +97,6 @@ namespace QFramework
         {
             if (joyStick)
             {
-                Debug.Log(eventData);
                 Vector2 point = transform.InverseTransformPoint(eventData.position);
                 float dis = Vector3.Distance(centerPoint, point);
                 joyStick.transform.localPosition = dis < radius ? point : new Vector2(
