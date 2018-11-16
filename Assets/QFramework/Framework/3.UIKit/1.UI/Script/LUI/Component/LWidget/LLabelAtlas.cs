@@ -77,7 +77,10 @@ namespace QFramework
         {
             if (text != "")
             {
-                sprites = null;// LLoadBundle.GetInstance().GetSpritesByName(atlas,prefix);
+                ResLoader _loader = ResMgr.Instance.GetOneResLoader();
+                Sprite sp = _loader.LoadSprite(atlas, prefix); // LLoadBundle.GetInstance().GetSpriteByName(atlas, spname);
+                _loader.Recycle2Cache();
+                _loader = null;
                 loadTexture();
                 render();
             }
